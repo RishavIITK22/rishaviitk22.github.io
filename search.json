@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research interests lie in robot learning systems that combine data-driven policies with structure from robotics, control, and physical interaction."
+  },
+  {
+    "objectID": "research.html#main-research-themes",
+    "href": "research.html#main-research-themes",
+    "title": "Research",
+    "section": "Main Research Themes",
+    "text": "Main Research Themes\n\nLong-Horizon Imitation Learning\nI am interested in how robot policies can learn temporally extended manipulation skills from demonstrations. This includes behavior cloning, Action Chunking Transformers, VQ-style action abstractions, diffusion policies, and recovery-aware data collection.\n\n\nReinforcement Learning under Partial Observability\nMany robotic tasks are partially observable because the robot only has local sensors, noisy perception, or incomplete state information. I study recurrent policies such as PPO-LSTM and PPO-GRU for such settings.\n\n\nVision-Language-Action Models\nI am interested in how high-level language-conditioned reasoning can connect to low-level continuous robot control through action decoders, proprioception, temporal modeling, and grounding in real demonstrations.\n\n\nPractical Robot Data Collection\nA major bottleneck in robot learning is collecting useful, trustworthy, and scalable data. I am exploring low-cost data collection pipelines using SO101 arms, cameras, teleoperation, and structured evaluation."
+  },
+  {
+    "objectID": "research.html#current-questions",
+    "href": "research.html#current-questions",
+    "title": "Research",
+    "section": "Current Questions",
+    "text": "Current Questions\n\nHow can ACT-style policies be made more robust to disturbances?\nWhen should we combine imitation learning with motion planning or RMPFlow-style smoothing?\nHow much data is needed for reliable long-horizon manipulation on low-cost hardware?\nHow can recurrent RL policies form useful memory in sparse-reward POMDPs?\nHow should VLA models represent actions for precise robot control?"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Selected research and engineering projects.\n\n\nLong-Horizon LEGO Stacking with ACT\nProblem: Train a low-cost robot arm to stack multiple objects from demonstrations.\nApproach: Collect teleoperation data using SO101, train ACT-style policies, and evaluate task success, smoothness, and recovery behavior.\nTools: LeRobot, PyTorch, OpenCV, RealSense, SO101\nStatus: In progress\n\n\nPPO-LSTM for Partially Observable Box Pushing\nProblem: Solve a POMDP where the agent has only local sensor information.\nApproach: Use recurrent PPO with LSTM/GRU memory, reward shaping, and belief-state analysis.\nTools: PyTorch, Gymnasium, PPO, recurrent networks\nStatus: Active\n\n\nIsaac Lab Bimanual Toy Arrangement\nProblem: Arrange scattered toys into a target goal configuration using dexterous bimanual manipulation.\nApproach: Build simulation scenes, define observations/actions/rewards, and compare imitation learning and RL-style policies.\nTools: Isaac Lab, PyTorch, robot simulation, dexterous hands\nStatus: Research planning\n\n\nReal-Time Fraud Risk Decisioning Platform\nProblem: Score financial transactions in real time and decide whether to approve, review, or block.\nApproach: Combine supervised ML, graph features, streaming features, and bandit/RL-style decisioning.\nTools: Python, scikit-learn/PyTorch, FastAPI, databases, streaming design\nStatus: Planned"
+  },
+  {
+    "objectID": "posts/2026-05-ppo-from-scratch/index.html",
+    "href": "posts/2026-05-ppo-from-scratch/index.html",
+    "title": "PPO from Scratch: The Intuition Behind Clipped Policy Optimization",
+    "section": "",
+    "text": "Proximal Policy Optimization, or PPO, is one of the most widely used policy gradient algorithms.\nThe main idea is:\n\nImprove the policy, but do not let it change too much in one update.\n\n\n\nA policy gradient method tries to maximize expected return:\n\\[\nJ(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}[R(\\tau)]\n\\]\nThe policy gradient theorem gives an update direction:\n\\[\n\\nabla_\\theta J(\\theta) = \\mathbb{E}\\left[\\nabla_\\theta \\log \\pi_\\theta(a_t \\mid s_t) A_t\\right]\n\\]\nHere, \\(A_t\\) is the advantage estimate.\n\n\n\nPPO uses:\n\\[\nL^{CLIP}(\\theta) = \\mathbb{E}\\left[\\min\\left(r_t(\\theta) A_t, \\text{clip}(r_t(\\theta), 1-\\epsilon, 1+\\epsilon) A_t\\right)\\right]\n\\]\nThe clipping prevents the policy from changing too aggressively."
+  },
+  {
+    "objectID": "posts/2026-05-ppo-from-scratch/index.html#policy-gradient-objective",
+    "href": "posts/2026-05-ppo-from-scratch/index.html#policy-gradient-objective",
+    "title": "PPO from Scratch: The Intuition Behind Clipped Policy Optimization",
+    "section": "",
+    "text": "A policy gradient method tries to maximize expected return:\n\\[\nJ(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}[R(\\tau)]\n\\]\nThe policy gradient theorem gives an update direction:\n\\[\n\\nabla_\\theta J(\\theta) = \\mathbb{E}\\left[\\nabla_\\theta \\log \\pi_\\theta(a_t \\mid s_t) A_t\\right]\n\\]\nHere, \\(A_t\\) is the advantage estimate."
+  },
+  {
+    "objectID": "posts/2026-05-ppo-from-scratch/index.html#clipped-objective",
+    "href": "posts/2026-05-ppo-from-scratch/index.html#clipped-objective",
+    "title": "PPO from Scratch: The Intuition Behind Clipped Policy Optimization",
+    "section": "",
+    "text": "PPO uses:\n\\[\nL^{CLIP}(\\theta) = \\mathbb{E}\\left[\\min\\left(r_t(\\theta) A_t, \\text{clip}(r_t(\\theta), 1-\\epsilon, 1+\\epsilon) A_t\\right)\\right]\n\\]\nThe clipping prevents the policy from changing too aggressively."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Rishav Ganguly",
+    "section": "",
+    "text": "rishavg22 [at] iitk [dot] ac [dot] in\n\n\nI am a dual degree student in Mechanical Engineering at the Indian Institute of Technology Kanpur, working in Robot Learning.\n\n\nI want to develop robot learning systems that can perform useful long-horizon manipulation tasks in complex environments. I am interested in combining classical robotics, reinforcement learning, imitation learning, and vision-language-action models to build efficient robot policies that can learn from demonstrations, adapt from interaction, and remain reliable on real hardware.\n\n\nMy current work involves low-cost robot data collection with SO101 arms, Action Chunking Transformer policies for manipulation, recurrent PPO for partially observable environments, and simulation workflows in Isaac Lab. I also write technical notes on papers, algorithms, and engineering lessons that connect mathematical ideas to working code.\n\n\nemail | resume | google scholar | github | blog\n\n\n\n\n\n\n\n\n\n\n[May 2026] Started this research portfolio and blog to document robot learning notes, paper explanations, and project build logs.\n\n\n[May 2026] Working on long-horizon manipulation experiments using ACT-style policies and SO101 teleoperation datasets.\n\n\n[May 2026] Exploring recurrent PPO for partially observable box-pushing environments with sparse rewards and local sensing.\n\n\n[May 2026] Preparing project notes on vision-language-action models, action decoders, and imitation learning for robot manipulation."
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Rishav Ganguly",
+    "section": "",
+    "text": "[May 2026] Started this research portfolio and blog to document robot learning notes, paper explanations, and project build logs.\n\n\n[May 2026] Working on long-horizon manipulation experiments using ACT-style policies and SO101 teleoperation datasets.\n\n\n[May 2026] Exploring recurrent PPO for partially observable box-pushing environments with sparse rewards and local sensing.\n\n\n[May 2026] Preparing project notes on vision-language-action models, action decoders, and imitation learning for robot manipulation."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Research notes, implementation logs, paper explanations, and engineering lessons.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPPO from Scratch: The Intuition Behind Clipped Policy Optimization\n\n\n\nreinforcement-learning\n\nppo\n\nmath\n\n\n\n\n\n\n\n\n\nMay 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nACT from Scratch: Why Robot Policies Predict Action Chunks\n\n\n\nimitation-learning\n\nrobotics\n\ntransformers\n\n\n\n\n\n\n\n\n\nMay 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWhy I Am Starting a Robot Learning Research Blog\n\n\n\nmeta\n\nrobot-learning\n\nresearch\n\n\n\n\n\n\n\n\n\nMay 12, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2026-05-act-from-scratch/index.html",
+    "href": "posts/2026-05-act-from-scratch/index.html",
+    "title": "ACT from Scratch: Why Robot Policies Predict Action Chunks",
+    "section": "",
+    "text": "Action Chunking Transformer, or ACT, is an imitation learning architecture for robot manipulation.\nThe key idea is simple:\n\nInstead of predicting only the next action, predict a short sequence of future actions.\n\nThis sequence is called an action chunk.\n\n\nIn standard behavior cloning, the policy learns:\n\\[\n\\pi_\\theta(a_t \\mid o_t)\n\\]\nGiven the current observation \\(o_t\\), the policy predicts one action \\(a_t\\).\nThe problem is that small mistakes accumulate. If the robot makes a slight error, it may enter a state that was rare in the training data. Then the policy becomes less reliable.\nThis is called compounding error.\n\n\n\nACT predicts:\n\\[\n\\pi_\\theta(a_{t:t+k-1} \\mid o_t)\n\\]\nSo the model outputs multiple future actions:\n\\[\n(a_t, a_{t+1}, \\dots, a_{t+k-1})\n\\]\nThis helps because the model learns short-horizon motion structure instead of isolated actions."
+  },
+  {
+    "objectID": "posts/2026-05-act-from-scratch/index.html#why-single-step-behavior-cloning-can-fail",
+    "href": "posts/2026-05-act-from-scratch/index.html#why-single-step-behavior-cloning-can-fail",
+    "title": "ACT from Scratch: Why Robot Policies Predict Action Chunks",
+    "section": "",
+    "text": "In standard behavior cloning, the policy learns:\n\\[\n\\pi_\\theta(a_t \\mid o_t)\n\\]\nGiven the current observation \\(o_t\\), the policy predicts one action \\(a_t\\).\nThe problem is that small mistakes accumulate. If the robot makes a slight error, it may enter a state that was rare in the training data. Then the policy becomes less reliable.\nThis is called compounding error."
+  },
+  {
+    "objectID": "posts/2026-05-act-from-scratch/index.html#action-chunking",
+    "href": "posts/2026-05-act-from-scratch/index.html#action-chunking",
+    "title": "ACT from Scratch: Why Robot Policies Predict Action Chunks",
+    "section": "",
+    "text": "ACT predicts:\n\\[\n\\pi_\\theta(a_{t:t+k-1} \\mid o_t)\n\\]\nSo the model outputs multiple future actions:\n\\[\n(a_t, a_{t+1}, \\dots, a_{t+k-1})\n\\]\nThis helps because the model learns short-horizon motion structure instead of isolated actions."
+  },
+  {
+    "objectID": "posts/2026-05-why-this-blog/index.html",
+    "href": "posts/2026-05-why-this-blog/index.html",
+    "title": "Why I Am Starting a Robot Learning Research Blog",
+    "section": "",
+    "text": "I am starting this blog as a public research notebook.\nMy goal is simple: whenever I read a paper, implement an algorithm, debug a robotics setup, or run an experiment, I want to document the process clearly.\n\n\nResearch ideas become much clearer when they are written down. A blog forces me to answer questions like:\n\nWhat problem is this paper actually solving?\nWhat is the core mathematical idea?\nWhat assumptions does the method make?\nWhat happens when I try to implement it?\nWhat fails in practice?\n\n\n\n\nThis blog will focus on:\n\nRobot learning papers\nReinforcement learning algorithms\nImitation learning systems\nVision-language-action models\nReal robot data collection\nEngineering lessons from implementation\n\n\n\n\nI want each post to move from intuition to equations to code.\nThe rough structure will be:\nmotivation -&gt; concept -&gt; math -&gt; implementation -&gt; experiments -&gt; lessons\n\n\n\nThe long-term goal is to build a record of my learning and research progress in robot learning, especially for long-horizon manipulation and generalist robot policies."
+  },
+  {
+    "objectID": "posts/2026-05-why-this-blog/index.html#why-write-publicly",
+    "href": "posts/2026-05-why-this-blog/index.html#why-write-publicly",
+    "title": "Why I Am Starting a Robot Learning Research Blog",
+    "section": "",
+    "text": "Research ideas become much clearer when they are written down. A blog forces me to answer questions like:\n\nWhat problem is this paper actually solving?\nWhat is the core mathematical idea?\nWhat assumptions does the method make?\nWhat happens when I try to implement it?\nWhat fails in practice?"
+  },
+  {
+    "objectID": "posts/2026-05-why-this-blog/index.html#what-i-will-write-about",
+    "href": "posts/2026-05-why-this-blog/index.html#what-i-will-write-about",
+    "title": "Why I Am Starting a Robot Learning Research Blog",
+    "section": "",
+    "text": "This blog will focus on:\n\nRobot learning papers\nReinforcement learning algorithms\nImitation learning systems\nVision-language-action models\nReal robot data collection\nEngineering lessons from implementation"
+  },
+  {
+    "objectID": "posts/2026-05-why-this-blog/index.html#my-intended-style",
+    "href": "posts/2026-05-why-this-blog/index.html#my-intended-style",
+    "title": "Why I Am Starting a Robot Learning Research Blog",
+    "section": "",
+    "text": "I want each post to move from intuition to equations to code.\nThe rough structure will be:\nmotivation -&gt; concept -&gt; math -&gt; implementation -&gt; experiments -&gt; lessons"
+  },
+  {
+    "objectID": "posts/2026-05-why-this-blog/index.html#long-term-goal",
+    "href": "posts/2026-05-why-this-blog/index.html#long-term-goal",
+    "title": "Why I Am Starting a Robot Learning Research Blog",
+    "section": "",
+    "text": "The long-term goal is to build a record of my learning and research progress in robot learning, especially for long-horizon manipulation and generalist robot policies."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Scholarly work\n\n\nPublications\nFormal papers, technical reports, workshop submissions, and extended project write-ups.\n\n\n\nManuscripts in preparation\n\n\n\n\nRishav Ganguly\n\n\nLong-Horizon Manipulation with Action Chunking Policies and Motion Refinement\n\n\nIn preparation · 2026\n\n\nDraft (soon) Project page\n\n\n\n\nRishav Ganguly\n\n\nRecurrent PPO for Partially Observable Box Pushing: Memory, Belief, and Curriculum\n\n\nIn preparation · 2026\n\n\nDraft (soon) Project page\n\n\n\n\n\nWorking notes\n\n\nUntil formal papers are posted, detailed research progress, experiment logs, and implementation notes are documented on the blog and project pages. Pre-prints will be posted to arXiv as they are ready."
+  }
+]

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Rishav Ganguly</title>
+<link>https://rishavg22.github.io/blog.html</link>
+<atom:link href="https://rishavg22.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Research portfolio and blog on Robot Learning, Reinforcement Learning, Imitation Learning, and Embodied AI.</description>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Wed, 13 May 2026 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>PPO from Scratch: The Intuition Behind Clipped Policy Optimization</title>
+  <link>https://rishavg22.github.io/posts/2026-05-ppo-from-scratch/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="ppo-from-scratch-the-intuition-behind-clipped-policy-optimization" class="level1">
+<h1>PPO from Scratch: The Intuition Behind Clipped Policy Optimization</h1>
+<p>Proximal Policy Optimization, or PPO, is one of the most widely used policy gradient algorithms.</p>
+<p>The main idea is:</p>
+<blockquote class="blockquote">
+<p>Improve the policy, but do not let it change too much in one update.</p>
+</blockquote>
+<section id="policy-gradient-objective" class="level2">
+<h2 class="anchored" data-anchor-id="policy-gradient-objective">Policy gradient objective</h2>
+<p>A policy gradient method tries to maximize expected return:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AJ(%5Ctheta)%20=%20%5Cmathbb%7BE%7D_%7B%5Ctau%20%5Csim%20%5Cpi_%5Ctheta%7D%5BR(%5Ctau)%5D%0A"></p>
+<p>The policy gradient theorem gives an update direction:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cnabla_%5Ctheta%20J(%5Ctheta)%20=%20%5Cmathbb%7BE%7D%5Cleft%5B%5Cnabla_%5Ctheta%20%5Clog%20%5Cpi_%5Ctheta(a_t%20%5Cmid%20s_t)%20A_t%5Cright%5D%0A"></p>
+<p>Here, <img src="https://latex.codecogs.com/png.latex?A_t"> is the advantage estimate.</p>
+</section>
+<section id="clipped-objective" class="level2">
+<h2 class="anchored" data-anchor-id="clipped-objective">Clipped objective</h2>
+<p>PPO uses:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL%5E%7BCLIP%7D(%5Ctheta)%20=%20%5Cmathbb%7BE%7D%5Cleft%5B%5Cmin%5Cleft(r_t(%5Ctheta)%20A_t,%20%5Ctext%7Bclip%7D(r_t(%5Ctheta),%201-%5Cepsilon,%201+%5Cepsilon)%20A_t%5Cright)%5Cright%5D%0A"></p>
+<p>The clipping prevents the policy from changing too aggressively.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>reinforcement-learning</category>
+  <category>ppo</category>
+  <category>math</category>
+  <guid>https://rishavg22.github.io/posts/2026-05-ppo-from-scratch/</guid>
+  <pubDate>Wed, 13 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>ACT from Scratch: Why Robot Policies Predict Action Chunks</title>
+  <link>https://rishavg22.github.io/posts/2026-05-act-from-scratch/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="act-from-scratch-why-robot-policies-predict-action-chunks" class="level1">
+<h1>ACT from Scratch: Why Robot Policies Predict Action Chunks</h1>
+<p>Action Chunking Transformer, or ACT, is an imitation learning architecture for robot manipulation.</p>
+<p>The key idea is simple:</p>
+<blockquote class="blockquote">
+<p>Instead of predicting only the next action, predict a short sequence of future actions.</p>
+</blockquote>
+<p>This sequence is called an <strong>action chunk</strong>.</p>
+<section id="why-single-step-behavior-cloning-can-fail" class="level2">
+<h2 class="anchored" data-anchor-id="why-single-step-behavior-cloning-can-fail">Why single-step behavior cloning can fail</h2>
+<p>In standard behavior cloning, the policy learns:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cpi_%5Ctheta(a_t%20%5Cmid%20o_t)%0A"></p>
+<p>Given the current observation <img src="https://latex.codecogs.com/png.latex?o_t">, the policy predicts one action <img src="https://latex.codecogs.com/png.latex?a_t">.</p>
+<p>The problem is that small mistakes accumulate. If the robot makes a slight error, it may enter a state that was rare in the training data. Then the policy becomes less reliable.</p>
+<p>This is called <strong>compounding error</strong>.</p>
+</section>
+<section id="action-chunking" class="level2">
+<h2 class="anchored" data-anchor-id="action-chunking">Action chunking</h2>
+<p>ACT predicts:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cpi_%5Ctheta(a_%7Bt:t+k-1%7D%20%5Cmid%20o_t)%0A"></p>
+<p>So the model outputs multiple future actions:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(a_t,%20a_%7Bt+1%7D,%20%5Cdots,%20a_%7Bt+k-1%7D)%0A"></p>
+<p>This helps because the model learns short-horizon motion structure instead of isolated actions.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>imitation-learning</category>
+  <category>robotics</category>
+  <category>transformers</category>
+  <guid>https://rishavg22.github.io/posts/2026-05-act-from-scratch/</guid>
+  <pubDate>Tue, 12 May 2026 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>Why I Am Starting a Robot Learning Research Blog</title>
+  <link>https://rishavg22.github.io/posts/2026-05-why-this-blog/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="why-i-am-starting-a-robot-learning-research-blog" class="level1">
+<h1>Why I Am Starting a Robot Learning Research Blog</h1>
+<p>I am starting this blog as a public research notebook.</p>
+<p>My goal is simple: whenever I read a paper, implement an algorithm, debug a robotics setup, or run an experiment, I want to document the process clearly.</p>
+<section id="why-write-publicly" class="level2">
+<h2 class="anchored" data-anchor-id="why-write-publicly">Why write publicly?</h2>
+<p>Research ideas become much clearer when they are written down. A blog forces me to answer questions like:</p>
+<ul>
+<li>What problem is this paper actually solving?</li>
+<li>What is the core mathematical idea?</li>
+<li>What assumptions does the method make?</li>
+<li>What happens when I try to implement it?</li>
+<li>What fails in practice?</li>
+</ul>
+</section>
+<section id="what-i-will-write-about" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-will-write-about">What I will write about</h2>
+<p>This blog will focus on:</p>
+<ol type="1">
+<li>Robot learning papers</li>
+<li>Reinforcement learning algorithms</li>
+<li>Imitation learning systems</li>
+<li>Vision-language-action models</li>
+<li>Real robot data collection</li>
+<li>Engineering lessons from implementation</li>
+</ol>
+</section>
+<section id="my-intended-style" class="level2">
+<h2 class="anchored" data-anchor-id="my-intended-style">My intended style</h2>
+<p>I want each post to move from intuition to equations to code.</p>
+<p>The rough structure will be:</p>
+<pre class="text"><code>motivation -&gt; concept -&gt; math -&gt; implementation -&gt; experiments -&gt; lessons</code></pre>
+</section>
+<section id="long-term-goal" class="level2">
+<h2 class="anchored" data-anchor-id="long-term-goal">Long-term goal</h2>
+<p>The long-term goal is to build a record of my learning and research progress in robot learning, especially for long-horizon manipulation and generalist robot policies.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>meta</category>
+  <category>robot-learning</category>
+  <category>research</category>
+  <guid>https://rishavg22.github.io/posts/2026-05-why-this-blog/</guid>
+  <pubDate>Mon, 11 May 2026 18:30:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
