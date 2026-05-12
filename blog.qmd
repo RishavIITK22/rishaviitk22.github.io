@@ -1,0 +1,13 @@
+---
+title: "Blog"
+title-block-banner: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+---
+
+
+Research notes, implementation logs, paper explanations, and engineering lessons.

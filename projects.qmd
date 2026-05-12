@@ -1,0 +1,59 @@
+---
+title: "Projects"
+title-block-banner: false
+---
+
+
+Selected research and engineering projects.
+
+::: {.card-grid}
+
+::: {.card}
+### Long-Horizon LEGO Stacking with ACT
+
+**Problem:** Train a low-cost robot arm to stack multiple objects from demonstrations.
+
+**Approach:** Collect teleoperation data using SO101, train ACT-style policies, and evaluate task success, smoothness, and recovery behavior.
+
+**Tools:** LeRobot, PyTorch, OpenCV, RealSense, SO101
+
+**Status:** In progress
+:::
+
+::: {.card}
+### PPO-LSTM for Partially Observable Box Pushing
+
+**Problem:** Solve a POMDP where the agent has only local sensor information.
+
+**Approach:** Use recurrent PPO with LSTM/GRU memory, reward shaping, and belief-state analysis.
+
+**Tools:** PyTorch, Gymnasium, PPO, recurrent networks
+
+**Status:** Active
+:::
+
+::: {.card}
+### Isaac Lab Bimanual Toy Arrangement
+
+**Problem:** Arrange scattered toys into a target goal configuration using dexterous bimanual manipulation.
+
+**Approach:** Build simulation scenes, define observations/actions/rewards, and compare imitation learning and RL-style policies.
+
+**Tools:** Isaac Lab, PyTorch, robot simulation, dexterous hands
+
+**Status:** Research planning
+:::
+
+::: {.card}
+### Real-Time Fraud Risk Decisioning Platform
+
+**Problem:** Score financial transactions in real time and decide whether to approve, review, or block.
+
+**Approach:** Combine supervised ML, graph features, streaming features, and bandit/RL-style decisioning.
+
+**Tools:** Python, scikit-learn/PyTorch, FastAPI, databases, streaming design
+
+**Status:** Planned
+:::
+
+:::

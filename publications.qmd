@@ -1,0 +1,51 @@
+---
+title: "Publications"
+page-layout: article
+toc: true
+---
+
+::: {.rg-hero-eyebrow}
+Scholarly work
+:::
+
+# Publications
+
+Formal papers, technical reports, workshop submissions, and extended project write-ups.
+
+---
+
+::: {.rg-section}
+::: {.rg-section-label}
+Manuscripts in preparation
+:::
+:::
+
+::: {.rg-pub-entry}
+<p class="rg-pub-authors">Rishav Ganguly</p>
+<p class="rg-pub-title">Long-Horizon Manipulation with Action Chunking Policies and Motion Refinement</p>
+<p class="rg-pub-venue">In preparation · 2026</p>
+::: {.rg-pub-links}
+<a class="rg-pub-link" href="#">Draft (soon)</a>
+<a class="rg-pub-link" href="projects.qmd">Project page</a>
+:::
+:::
+
+::: {.rg-pub-entry}
+<p class="rg-pub-authors">Rishav Ganguly</p>
+<p class="rg-pub-title">Recurrent PPO for Partially Observable Box Pushing: Memory, Belief, and Curriculum</p>
+<p class="rg-pub-venue">In preparation · 2026</p>
+::: {.rg-pub-links}
+<a class="rg-pub-link" href="#">Draft (soon)</a>
+<a class="rg-pub-link" href="projects.qmd">Project page</a>
+:::
+:::
+
+---
+
+::: {.rg-section}
+::: {.rg-section-label}
+Working notes
+:::
+:::
+
+Until formal papers are posted, detailed research progress, experiment logs, and implementation notes are documented on the [blog](blog.qmd) and [project pages](projects.qmd). Pre-prints will be posted to arXiv as they are ready.

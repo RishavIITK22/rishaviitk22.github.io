@@ -1,0 +1,39 @@
+---
+title: "PPO from Scratch: The Intuition Behind Clipped Policy Optimization"
+date: 2026-05-14
+categories: [reinforcement-learning, ppo, math]
+---
+
+# PPO from Scratch: The Intuition Behind Clipped Policy Optimization
+
+Proximal Policy Optimization, or PPO, is one of the most widely used policy gradient algorithms.
+
+The main idea is:
+
+> Improve the policy, but do not let it change too much in one update.
+
+## Policy gradient objective
+
+A policy gradient method tries to maximize expected return:
+
+$$
+J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[R(\tau)]
+$$
+
+The policy gradient theorem gives an update direction:
+
+$$
+\nabla_\theta J(\theta) = \mathbb{E}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t) A_t\right]
+$$
+
+Here, $A_t$ is the advantage estimate.
+
+## Clipped objective
+
+PPO uses:
+
+$$
+L^{CLIP}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) A_t\right)\right]
+$$
+
+The clipping prevents the policy from changing too aggressively.

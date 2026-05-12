@@ -1,0 +1,56 @@
+---
+title: ""
+page-layout: full
+title-block-banner: false
+---
+
+::: {.home-wrap}
+
+::: {.intro-grid}
+
+::: {}
+# Rishav Ganguly {.intro-name}
+
+<div class="email-line">rishavg22 [at] iitk [dot] ac [dot] in</div>
+
+<p class="intro-text">
+I am a dual degree student in Mechanical Engineering at the Indian Institute of Technology Kanpur, working in Robot Learning.
+</p>
+
+<p class="intro-text">
+I want to develop robot learning systems that can perform useful long-horizon manipulation tasks in complex environments. I am interested in combining classical robotics, reinforcement learning, imitation learning, and vision-language-action models to build efficient robot policies that can learn from demonstrations, adapt from interaction, and remain reliable on real hardware.
+</p>
+
+<p class="intro-text">
+My current work involves low-cost robot data collection with SO101 arms, Action Chunking Transformer policies for manipulation, recurrent PPO for partially observable environments, and simulation workflows in Isaac Lab. I also write technical notes on papers, algorithms, and engineering lessons that connect mathematical ideas to working code.
+</p>
+
+<div class="link-row">
+<a href="mailto:rishavg22@iitk.ac.in">email</a>
+<span>|</span>
+<a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view?usp=sharing" target="_blank">resume</a>
+<span>|</span>
+<a href="https://scholar.google.com" target="_blank">google scholar</a>
+<span>|</span>
+<a href="https://github.com/rishavg22" target="_blank">github</a>
+<span>|</span>
+<a href="blog.qmd">blog</a>
+</div>
+:::
+
+::: {}
+<img src="assets/images/profile.jpg" class="profile-image" alt="Rishav Ganguly profile photo">
+:::
+
+:::
+
+## News {.section-title}
+
+<ul class="news-list">
+  <li><span class="news-date">[May 2026]</span> Started this research portfolio and blog to document robot learning notes, paper explanations, and project build logs.</li>
+  <li><span class="news-date">[May 2026]</span> Working on long-horizon manipulation experiments using ACT-style policies and SO101 teleoperation datasets.</li>
+  <li><span class="news-date">[May 2026]</span> Exploring recurrent PPO for partially observable box-pushing environments with sparse rewards and local sensing.</li>
+  <li><span class="news-date">[May 2026]</span> Preparing project notes on vision-language-action models, action decoders, and imitation learning for robot manipulation.</li>
+</ul>
+
+:::

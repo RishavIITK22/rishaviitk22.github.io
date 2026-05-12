@@ -1,0 +1,46 @@
+---
+title: "Why I Am Starting a Robot Learning Research Blog"
+date: 2026-05-12
+categories: [meta, robot-learning, research]
+---
+
+# Why I Am Starting a Robot Learning Research Blog
+
+I am starting this blog as a public research notebook.
+
+My goal is simple: whenever I read a paper, implement an algorithm, debug a robotics setup, or run an experiment, I want to document the process clearly.
+
+## Why write publicly?
+
+Research ideas become much clearer when they are written down. A blog forces me to answer questions like:
+
+- What problem is this paper actually solving?
+- What is the core mathematical idea?
+- What assumptions does the method make?
+- What happens when I try to implement it?
+- What fails in practice?
+
+## What I will write about
+
+This blog will focus on:
+
+1. Robot learning papers
+2. Reinforcement learning algorithms
+3. Imitation learning systems
+4. Vision-language-action models
+5. Real robot data collection
+6. Engineering lessons from implementation
+
+## My intended style
+
+I want each post to move from intuition to equations to code.
+
+The rough structure will be:
+
+```text
+motivation -> concept -> math -> implementation -> experiments -> lessons
+```
+
+## Long-term goal
+
+The long-term goal is to build a record of my learning and research progress in robot learning, especially for long-horizon manipulation and generalist robot policies.

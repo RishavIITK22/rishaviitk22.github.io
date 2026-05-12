@@ -1,0 +1,33 @@
+---
+title: "Research"
+title-block-banner: false
+---
+
+
+My research interests lie in robot learning systems that combine data-driven policies with structure from robotics, control, and physical interaction.
+
+## Main Research Themes
+
+### Long-Horizon Imitation Learning
+
+I am interested in how robot policies can learn temporally extended manipulation skills from demonstrations. This includes behavior cloning, Action Chunking Transformers, VQ-style action abstractions, diffusion policies, and recovery-aware data collection.
+
+### Reinforcement Learning under Partial Observability
+
+Many robotic tasks are partially observable because the robot only has local sensors, noisy perception, or incomplete state information. I study recurrent policies such as PPO-LSTM and PPO-GRU for such settings.
+
+### Vision-Language-Action Models
+
+I am interested in how high-level language-conditioned reasoning can connect to low-level continuous robot control through action decoders, proprioception, temporal modeling, and grounding in real demonstrations.
+
+### Practical Robot Data Collection
+
+A major bottleneck in robot learning is collecting useful, trustworthy, and scalable data. I am exploring low-cost data collection pipelines using SO101 arms, cameras, teleoperation, and structured evaluation.
+
+## Current Questions
+
+- How can ACT-style policies be made more robust to disturbances?
+- When should we combine imitation learning with motion planning or RMPFlow-style smoothing?
+- How much data is needed for reliable long-horizon manipulation on low-cost hardware?
+- How can recurrent RL policies form useful memory in sparse-reward POMDPs?
+- How should VLA models represent actions for precise robot control?

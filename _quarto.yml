@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Rishav Ganguly"
+  description: "Research portfolio and blog on Robot Learning, Reinforcement Learning, Imitation Learning, and Embodied AI."
+  site-url: "https://rishavg22.github.io"
+  navbar:
+    title: "Rishav Ganguly"
+    background: "#ffffff"
+    foreground: "#111827"
+    left:
+      - text: Projects
+        href: projects.qmd
+      - text: Research
+        href: research.qmd
+      - text: Blog
+        href: blog.qmd
+      - text: Resume
+        href: https://drive.google.com/file/d/14EH48bHUWjHzkDU64A8buA190AhgrV0b/view?usp=sharing
+        target: _blank
+    right:
+      - icon: github
+        href: https://github.com/rishavIITK22
+      - icon: envelope
+        href: mailto:rishavg22@iitk.ac.in
+  page-footer:
+    left: "© 2026 Rishav Ganguly"
+    right: "Built with Quarto"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/custom.scss
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false
+    code-overflow: wrap
+    smooth-scroll: true
+    link-external-newwindow: true
+    fontsize: 1.05em
+    linestretch: 1.6
+
+execute:
+  freeze: auto

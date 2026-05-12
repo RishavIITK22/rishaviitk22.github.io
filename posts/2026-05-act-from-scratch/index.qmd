@@ -1,0 +1,45 @@
+---
+title: "ACT from Scratch: Why Robot Policies Predict Action Chunks"
+date: 2026-05-13
+categories: [imitation-learning, robotics, transformers]
+---
+
+# ACT from Scratch: Why Robot Policies Predict Action Chunks
+
+Action Chunking Transformer, or ACT, is an imitation learning architecture for robot manipulation.
+
+The key idea is simple:
+
+> Instead of predicting only the next action, predict a short sequence of future actions.
+
+This sequence is called an **action chunk**.
+
+## Why single-step behavior cloning can fail
+
+In standard behavior cloning, the policy learns:
+
+$$
+\pi_\theta(a_t \mid o_t)
+$$
+
+Given the current observation $o_t$, the policy predicts one action $a_t$.
+
+The problem is that small mistakes accumulate. If the robot makes a slight error, it may enter a state that was rare in the training data. Then the policy becomes less reliable.
+
+This is called **compounding error**.
+
+## Action chunking
+
+ACT predicts:
+
+$$
+\pi_\theta(a_{t:t+k-1} \mid o_t)
+$$
+
+So the model outputs multiple future actions:
+
+$$
+(a_t, a_{t+1}, \dots, a_{t+k-1})
+$$
+
+This helps because the model learns short-horizon motion structure instead of isolated actions.
