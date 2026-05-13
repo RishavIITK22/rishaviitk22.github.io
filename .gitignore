@@ -3,3 +3,5 @@ _site/
 _freeze/
 .DS_Store
 Thumbs.db
+/.quarto/
+**/*.quarto_ipynb
