@@ -5,7 +5,7 @@ project:
 website:
   title: "Rishav Ganguly"
   description: "Research portfolio and blog on Robot Learning, Reinforcement Learning, Imitation Learning, and Embodied AI."
-  site-url: "https://rishavIITK22.github.io/rishavg22.github.io"
+  site-url: "https://rishaviitk22.github.io"
   navbar:
     title: "Rishav Ganguly"
     background: "#ffffff"
